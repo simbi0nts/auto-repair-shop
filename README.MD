@@ -1,68 +1,71 @@
+**1) Install**
 
+*Nothing yet*
 
-1) Install
+**2) Usage**
 
+**2.1) Get JWT token:**
 
-
-2) Usage
-
-
-2.1) Get JWT token:
-
-~ host:port/diag/api/token/
+    host:port/diag/api/token/
 
 args to send: 
+
     login
     password
 
 args to return
+
     refresh (token to refresh access token)
     access (token to access API)
 
 
-2.2) Refresh JWT token
+**2.2) Refresh JWT token**
 
-~ host:port/diag/api/token/refresh/
+    host:port/diag/api/token/refresh/
 
 args to send: 
+
     refresh (token to refresh access token)
 
 args to return
+
     access (token to access API)
 
 
 Note: Next api methods allowed only when access token (from 2.1 and 2.2) provided:
 
-headers:
-    Authorization: {access token}
-    (ex. "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk2OTA2MzAzLCJqdGkiOiJlMTY1N2NmMTNkZTY0ODIxYTMxYmY5MTg0NjIwODc0OCIsInVzZXJfaWQiOjF9.GlhsYjQ6hn-rPCEXaKXcBH1DxZyMpEq3zTEpLZAzZPE")
+    headers:
+        Authorization: {access token}
+        (ex. "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk2OTA2MzAzLCJqdGkiOiJlMTY1N2NmMTNkZTY0ODIxYTMxYmY5MTg0NjIwODc0OCIsInVzZXJfaWQiOjF9.GlhsYjQ6hn-rPCEXaKXcBH1DxZyMpEq3zTEpLZAzZPE")
 
 
-2.3) Make an appointment
+**2.3) Make an appointment**
 
-~ host:port/diag/api/make_appointment/
+    host:port/diag/api/make_appointment/
 
 args to send: 
+
     time (type: str)  # ex. "2020-01-01 09:00"
     workman_id
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
 args to return
+
     is_error
     info
 
+**2.4)Get an available appointment time**
 
-2.4) Get an available appointment time
-
-~ host:port/diag/api/get_available_appointment_time/
+    host:port/diag/api/get_available_appointment_time/
 
 args to send: 
+
     date (type: str)  # ex. "2020-01-01"
     repair_shop_id (optional)
     workman_id (optional)
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
-    OR
+OR
 
     datetime_begin (type: str)  # ex. "2020-01-01 09:00"
     datetime_end (type: str)  # ex. "2020-01-01 18:00"
@@ -71,21 +74,23 @@ args to send:
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
 args to return
+
     is_error
     info
 
 
-2.5) Check workshop workload
+**2.5) Check workshop workload**
 
-~ host:port/diag/api/check_workload/
+    host:port/diag/api/check_workload/
 
 args to send: 
+
     date (type: str)  # ex. "2020-01-01"
     repair_shop_id (optional)
     workman_id (optional)
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
-    OR
+   OR
 
     datetime_begin (type: str)  # ex. "2020-01-01 09:00"
     datetime_end (type: str)  # ex. "2020-01-01 18:00"
@@ -94,19 +99,21 @@ args to send:
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
 args to return
+
     is_error
     info
 
 
-3) Tests
+**3) Tests**
+
+*Nothing yet*
 
 
 
-
-
-9) Additional Info
+**9) Additional Info**
 
 Supported datetime formats:
+
     '%Y-%m-%d %H:%M:%S.%f'
     '%Y-%m-%dT%H:%M:%S.%f'
     '%d.%m.%Y %H:%M:%S'
@@ -119,5 +126,8 @@ Supported datetime formats:
     '%Y-%m'
 
 User Timezone info could be provided with
-~ Intl.DateTimeFormat().resolvedOptions().timeZone
+
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+
 (on client)
+
