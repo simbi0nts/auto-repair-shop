@@ -1,0 +1,5 @@
+
+.vscode/*
+*.py[cod]
+__pycache__
+task.txt
