@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:80
+    volumes:
+      - ./auto_repair_shop/:/usr/src/app/
+    ports:
+      - 80:80
+    env_file:
+      - ./.env.dev
