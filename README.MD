@@ -1,8 +1,8 @@
-**1) Install**
+## **1) Install**
 
 *Nothing yet*
 
-**2) Usage**
+## **2) Usage**
 
 **2.1) Get JWT token:**
 
@@ -104,13 +104,13 @@ args to return
     info
 
 
-**3) Tests**
+## **3) Tests**
 
 *Nothing yet*
 
 
 
-**9) Additional Info**
+## **9) Additional Info**
 
 Supported datetime formats:
 
