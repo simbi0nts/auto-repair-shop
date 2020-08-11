@@ -1,18 +1,21 @@
 
 from datetime import datetime
 
+import pytz
+from django.utils.timezone import make_aware
+
+from core.tests.pytests.model_fillers.data import (
+    generate_appointments, generate_appointments_daterange)
 from core.tests.pytests.model_fillers.structure import (
     generate_repair_shop, generate_user, generate_user_car,
     generate_work_regime, generate_work_regime_details, generate_workmans)
-
-from core.tests.pytests.model_fillers.data import generate_appointments, generate_appointments_daterange
 
 
 class SimpleTestDataGenerator(object):
 
     def generate_data(self, is_range=False):
-        self._datetime = datetime(2020, 8, 5, 9)
-        self._datetime_end = datetime(2020, 8, 10, 18)
+        self._datetime = make_aware(datetime(2020, 8, 5, 9), pytz.UTC)
+        self._datetime_end = make_aware(datetime(2020, 8, 10, 15), pytz.UTC)
         self.user = generate_user()
         self.user_car = generate_user_car(self.user)
         self.repair_shop = rs = generate_repair_shop()

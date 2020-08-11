@@ -41,8 +41,8 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        total_appointments_cnt = 30 * 8
-        occupied_appointments_cnt = len(self.appointments)
+        total_appointments_cnt = 30 * 8 - 15
+        occupied_appointments_cnt = len(self.appointments) - 9
 
         assert len(res1) == total_appointments_cnt
         assert len(res2) == total_appointments_cnt - occupied_appointments_cnt
@@ -82,8 +82,8 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        total_appointments_cnt = 30 * 8
-        occupied_appointments_cnt = len(self.appointments)
+        total_appointments_cnt = 30 * 8 - 15
+        occupied_appointments_cnt = len(self.appointments) - 9
 
         assert len(res1) == total_appointments_cnt
         assert len(res2) == total_appointments_cnt - occupied_appointments_cnt
@@ -120,6 +120,6 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        assert len(res1) == 8 * 6
+        assert len(res1) == 8 * 6 - 3
         assert len(res2) == 2 * 6
-        assert len(res3) == 6 * 6
+        assert len(res3) == 6 * 6 - 3
