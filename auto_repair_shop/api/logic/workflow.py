@@ -112,7 +112,7 @@ class GetAvailableAppointmentTimeLogic(BaseContextProcessor):
         appointments = sorted(set(available_time))
         appointments = [apt.astimezone(timezone).strftime(date_format) for apt in appointments]
 
-        msg = _("Available time: ")
+        msg = _("Available time")
         workload = f"{msg}: {'; '.join(appointments)}"
 
         return {

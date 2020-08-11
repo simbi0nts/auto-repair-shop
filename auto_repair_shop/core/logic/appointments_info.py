@@ -65,8 +65,8 @@ class BaseDataProcessor(object):
                              wt_begin: dt.datetime = None,
                              wt_end: dt.datetime = None, **kwargs) -> List[AppointmentInfo]:
 
-        def _comb(v1: dt.date, v2: dt.datetime) -> dt.datetime:
-            return dt.datetime.combine(v1, v2)
+        def _comb(v1: dt.date, v2: dt.time) -> dt.datetime:
+            return make_aware(dt.datetime.combine(v1, v2), pytz.UTC)
 
         def is_lunchtime(lt_begin: dt.datetime, lt_end: dt.datetime, cur_time: dt.datetime) -> bool:
             if any(val is None for val in (lt_begin, lt_end, cur_time)):
@@ -119,8 +119,8 @@ class BaseDataProcessor(object):
                 AppointmentInfo(
                     repair_shop_id,
                     workman.id,
-                    make_aware(_current_time_begin, pytz.UTC),
-                    make_aware(_current_time_end, pytz.UTC),
+                    _current_time_begin,
+                    _current_time_end,
                     appointment_dur,
                     is_occupied
                 )

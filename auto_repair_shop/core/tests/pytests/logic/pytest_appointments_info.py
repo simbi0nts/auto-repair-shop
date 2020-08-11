@@ -21,9 +21,12 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        assert len(res1) == 40
-        assert len(res2) == 25
-        assert len(res3) == 15
+        total_appointments_cnt = 5 * 8
+        occupied_appointments_cnt = len(self.appointments)
+
+        assert len(res1) == total_appointments_cnt
+        assert len(res2) == total_appointments_cnt - occupied_appointments_cnt
+        assert len(res3) == occupied_appointments_cnt
 
     @pytest.mark.django_db
     def test_workload_DateRangeProcessor(self):
@@ -38,9 +41,12 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        assert len(res1) == 240
-        assert len(res2) == 150
-        assert len(res3) == 90
+        total_appointments_cnt = 30 * 8
+        occupied_appointments_cnt = len(self.appointments)
+
+        assert len(res1) == total_appointments_cnt
+        assert len(res2) == total_appointments_cnt - occupied_appointments_cnt
+        assert len(res3) == occupied_appointments_cnt
 
     @pytest.mark.django_db
     def test_workload_DateShopProcessor(self):
@@ -55,9 +61,12 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        assert len(res1) == 40
-        assert len(res2) == 25
-        assert len(res3) == 15
+        total_appointments_cnt = 5 * 8
+        occupied_appointments_cnt = len(self.appointments)
+
+        assert len(res1) == total_appointments_cnt
+        assert len(res2) == total_appointments_cnt - occupied_appointments_cnt
+        assert len(res3) == occupied_appointments_cnt
 
     @pytest.mark.django_db
     def test_workload_DateRangeShopProcessor(self):
@@ -73,9 +82,12 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        assert len(res1) == 240
-        assert len(res2) == 150
-        assert len(res3) == 90
+        total_appointments_cnt = 30 * 8
+        occupied_appointments_cnt = len(self.appointments)
+
+        assert len(res1) == total_appointments_cnt
+        assert len(res2) == total_appointments_cnt - occupied_appointments_cnt
+        assert len(res3) == occupied_appointments_cnt
 
     @pytest.mark.django_db
     def test_workload_DateWorkmanProcessor(self):
@@ -91,8 +103,8 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res3 = get_occupied_appointments(**data)
 
         assert len(res1) == 8
-        assert len(res2) == 3
-        assert len(res3) == 5
+        assert len(res2) == 2
+        assert len(res3) == 6
 
     @pytest.mark.django_db
     def test_workload_DateRangeWorkmanProcessor(self):
@@ -108,6 +120,6 @@ class TestAppointmentsProcessors(SimpleTestDataGenerator):
         res2 = get_available_appointments(**data)
         res3 = get_occupied_appointments(**data)
 
-        assert len(res1) == 48
-        assert len(res2) == 18
-        assert len(res3) == 30
+        assert len(res1) == 8 * 6
+        assert len(res2) == 2 * 6
+        assert len(res3) == 6 * 6

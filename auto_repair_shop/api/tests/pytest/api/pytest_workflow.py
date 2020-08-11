@@ -55,6 +55,24 @@ class TestAppointmentsProcessors(APITestCase, SimpleTestDataGenerator):
         self.assertFalse(is_error)
 
     @pytest.mark.django_db
+    def test_MakeAppointment_POST_on_occupied_time(self):
+        self.generate_data()
+        token = self.get_token()
+
+        request = {
+            "time": "2020-08-05 13:00",
+            "workman_id": 1
+        }
+        view_path = reverse("make_appointment")
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
+        response = self.client.post(view_path, json.dumps(request),
+                                    HTTP_X_REQUESTED_WITH='XMLHttpRequest',
+                                    content_type='application/json')
+
+        is_error, _ = response.data['is_error'], response.data['info']
+        self.assertTrue(is_error)
+
+    @pytest.mark.django_db
     def test_CheckRepairShopWorkload_GET(self):
         self.generate_data()
         token = self.get_token()
@@ -69,7 +87,7 @@ class TestAppointmentsProcessors(APITestCase, SimpleTestDataGenerator):
 
         is_error, info = response.data['is_error'], response.data['info']
         self.assertFalse(is_error)
-        self.assertTrue("62.5" in info)
+        self.assertTrue("75" in info)
 
     @pytest.mark.django_db
     def test_GetAvailableAppointmentTime_GET(self):
@@ -88,7 +106,6 @@ class TestAppointmentsProcessors(APITestCase, SimpleTestDataGenerator):
         self.assertFalse(is_error)
         self.assertTrue("2020/08/05 14:00" in info)
         self.assertTrue("2020/08/05 15:00" in info)
-        self.assertTrue("2020/08/05 20:00" in info)
 
     @pytest.mark.django_db
     def test_MakeAppointment_GET(self):

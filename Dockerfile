@@ -1,5 +1,6 @@
 # pull official base image
 FROM python:3.8.3-alpine
+CMD ["nginx", "-g", "daemon off;"]
 # set work directory
 WORKDIR /usr/src/app
 # set environment variables

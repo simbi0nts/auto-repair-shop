@@ -2,6 +2,9 @@
 
 from datetime import datetime, timedelta
 
+import pytz
+from django.utils.timezone import make_aware
+
 from core.models import Appointments  # , AppointmentsArchive
 
 
@@ -23,6 +26,9 @@ def generate_workmans(rs):
 def generate_appointments(workmans=None, customer=None, work_regime=None,
                           _datetime=datetime(2020, 8, 5, 9), missed_hours=(2, 3, 5)):
 
+    if _datetime.tzinfo is None:
+        _datetime = make_aware(_datetime, pytz.UTC)
+
     if customer is None:
         customer = generate_user()
 
@@ -37,7 +43,7 @@ def generate_appointments(workmans=None, customer=None, work_regime=None,
     appointments = []
 
     for w_id in range(3):
-        for hour_delta in range(8):
+        for hour_delta in range(9):
             if missed_hours and hour_delta in missed_hours:
                 continue  # emulate empty slots
 
