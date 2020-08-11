@@ -1,8 +1,6 @@
 
 from django.utils.timezone import get_current_timezone
-from django.utils.timezone import make_aware
 from django.utils.translation import gettext_lazy as _
-import pytz
 
 from core.logic.appointments_actions import make_an_appointment
 from core.logic.appointments_info import (get_all_appointments,
@@ -109,7 +107,7 @@ class GetAvailableAppointmentTimeLogic(BaseContextProcessor):
         timezone = cls.get_timezone(data)
 
         for appointment in available_appointments:
-            available_time.append(make_aware(appointment.datetime_begin, pytz.UTC))
+            available_time.append(appointment.datetime_begin)
 
         appointments = sorted(set(available_time))
         appointments = [apt.astimezone(timezone).strftime(date_format) for apt in appointments]

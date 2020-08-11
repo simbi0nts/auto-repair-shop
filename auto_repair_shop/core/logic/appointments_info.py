@@ -4,7 +4,9 @@ import inspect
 from dataclasses import asdict, dataclass
 from typing import List
 
+import pytz
 from django.db.models import Q, QuerySet
+from django.utils.timezone import make_aware
 
 from core.logic.custom_exceptions import WrongArgumentsHasBeenPassed
 from core.models.repair_shop import RepairShop
@@ -117,8 +119,8 @@ class BaseDataProcessor(object):
                 AppointmentInfo(
                     repair_shop_id,
                     workman.id,
-                    _current_time_begin,
-                    _current_time_end,
+                    make_aware(_current_time_begin, pytz.UTC),
+                    make_aware(_current_time_end, pytz.UTC),
                     appointment_dur,
                     is_occupied
                 )

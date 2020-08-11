@@ -3,9 +3,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from diag_api.logic.workflow import (CheckRepairShopWorkloadLogic,
-                                     MakeAppointmentLogic,
-                                     GetAvailableAppointmentTimeLogic)
+from api.logic.workflow import (CheckRepairShopWorkloadLogic,
+                                MakeAppointmentLogic,
+                                GetAvailableAppointmentTimeLogic)
 
 
 class BaseApiView(APIView):

@@ -11,6 +11,9 @@ from django.utils.translation import gettext_lazy as _
 def string_to_date(date_string: str,
                    formats: Union[str, Iterable] = None,
                    timezone=None, naive: bool = False) -> datetime:
+    if type(date_string) != str:
+        return date_string
+
     if not formats:
         formats = [
             '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%dT%H:%M:%S.%f',

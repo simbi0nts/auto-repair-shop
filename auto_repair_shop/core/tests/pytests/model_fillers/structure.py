@@ -76,9 +76,9 @@ def generate_work_regime(repair_shop=None):
 
 
 def generate_user():
-    user = User.objects.create(
+    user = User.objects.create_user(
+        "Test",
         username="Test",
-        password="Test",
         is_superuser=False
     )
     return user

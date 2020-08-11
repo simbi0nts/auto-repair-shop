@@ -2,45 +2,25 @@
 from datetime import datetime
 
 import pytest
+import pytz
+from django.utils.timezone import make_aware
 
 from core.logic.appointments_actions import (delete_an_appointment,
                                              make_an_appointment,
                                              move_an_appointment)
 from core.models.workflow import Appointments
-from core.tests.pytests.model_fillers.structure import (
-    generate_repair_shop, generate_user, generate_user_car,
-    generate_work_regime, generate_work_regime_details, generate_workmans)
-
-# from core.tests.pytests.model_fillers.data import generate_appointments, generate_appointments_daterange
+from core.tests.pytests.data_generators import SimpleTestDataGenerator
 
 
-class TestAppointmentsProcessors(object):
-    def generate_data(self, is_range=False):
-        self._datetime = datetime(2020, 8, 5, 9)
-        self._datetime_end = datetime(2020, 8, 10, 18)
-        self.user = generate_user()
-        self.user_car = generate_user_car(self.user)
-        self.repair_shop = rs = generate_repair_shop()
-        self.work_regime = wr = generate_work_regime(rs)
-        self.work_regime_details = generate_work_regime_details(wr)
-        self.workmans = generate_workmans(rs)
-
-        # NOTICE: IN CURRENT CASE THERE IS LUNCH BREAK AT WORK_BEGIN + 5hrs
-        # missed_hours = (2, 3, 5)  # time delta in hours from work_time begin
-        # if is_range:
-        #     self.appointments = generate_appointments_daterange(
-        #         self.workmans, self.user, self.work_regime, self._datetime, self._datetime_end, missed_hours
-        #     )
-        # else:
-        #     self.appointments = generate_appointments(
-        #         self.workmans, self.user, self.work_regime, self._datetime, missed_hours
-        #     )
+class TestAppointmentsProcessors(SimpleTestDataGenerator):
 
     @pytest.mark.django_db
     def test_create(self):
         self.generate_data()
 
-        _date = datetime(2020, 8, 5, 12)
+        _date = datetime(2020, 8, 5, 14)
+        _date = make_aware(_date, pytz.timezone("Europe/Moscow"))
+
         data = {
             "time": _date,
             "workman_id": self.workmans[3].id,
@@ -62,7 +42,9 @@ class TestAppointmentsProcessors(object):
     def test_delete(self):
         self.generate_data(is_range=True)
 
-        _date = datetime(2020, 8, 5, 12)
+        _date = datetime(2020, 8, 5, 14)
+        _date = make_aware(_date, pytz.timezone("Europe/Moscow"))
+
         data = {
             "time": _date,
             "workman_id": self.workmans[3].id,
@@ -95,8 +77,11 @@ class TestAppointmentsProcessors(object):
     def test_move(self):
         self.generate_data()
 
-        _date = datetime(2020, 8, 5, 12)
-        new_date = datetime(2020, 8, 5, 15)
+        _date = datetime(2020, 8, 5, 14)
+        _date = make_aware(_date, pytz.timezone("Europe/Moscow"))
+
+        new_date = datetime(2020, 8, 5, 18)
+        new_date = make_aware(new_date, pytz.timezone("Europe/Moscow"))
 
         data = {
             "time": _date,
