@@ -98,6 +98,7 @@ args to return
     is_error
     info  # ex. 'Available time: : 2020/08/05 14:00; 2020/08/05 15:00; 2020/08/05 20:00'
 
+Note: datetime_begin <= assumed appointment time < datetime_end
 
 **2.5) Check workshop workload**
 
@@ -117,6 +118,8 @@ args to send:
     repair_shop_id (optional)
     workman_id (optional)
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
+
+Note: datetime_begin <= assumed appointment time < datetime_end
 
 args to return
 

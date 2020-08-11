@@ -188,6 +188,8 @@ class BaseDateRangeProcessor(BaseDateProcessor):
 
     def _process_date_range(self, qs: QuerySet, work_regime: QuerySet, **kwargs) -> List[AppointmentInfo]:
         res = []
+        kwargs['wt_begin'] = self.datetime_begin
+        kwargs['wt_end'] = self.datetime_end
 
         start_date = self.datetime_begin.date()
         end_date = self.datetime_end.date()
