@@ -26,7 +26,7 @@ Note 2: I'm highly recommend to use virtual environment
 
 **2.1) Get JWT token:**
 
-    host:port/diag/api/token/
+    host:port/api/token/
 
 args to send: 
 
@@ -41,7 +41,7 @@ args to return
 
 **2.2) Refresh JWT token**
 
-    host:port/diag/api/token/refresh/
+    host:port/api/token/refresh/
 
 args to send: 
 
@@ -61,7 +61,7 @@ Note: Next api methods allowed only when access token (from 2.1 and 2.2) provide
 
 **2.3) Make an appointment**
 
-    host:port/diag/api/make_appointment/
+    host:port/api/make_appointment/
 
 args to send: 
 
@@ -76,7 +76,7 @@ args to return
 
 **2.4)Get an available appointment time**
 
-    host:port/diag/api/get_available_appointment_time/
+    host:port/api/get_available_appointment_time/
 
 args to send: 
 
@@ -101,7 +101,7 @@ args to return
 
 **2.5) Check workshop workload**
 
-    host:port/diag/api/check_workload/
+    host:port/api/check_workload/
 
 args to send: 
 
