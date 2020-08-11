@@ -96,7 +96,7 @@ OR
 args to return
 
     is_error
-    info
+    info  # ex. 'Available time: : 2020/08/05 14:00; 2020/08/05 15:00; 2020/08/05 20:00'
 
 
 **2.5) Check workshop workload**
@@ -121,7 +121,7 @@ args to send:
 args to return
 
     is_error
-    info
+    info  # ex. 'Current workload: 62.5%'
 
 
 ## **3) Tests**
