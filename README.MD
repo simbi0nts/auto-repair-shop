@@ -1,6 +1,26 @@
+
 ## **1) Install**
 
-*Nothing yet*
+1.a) Via Docker
+
+    git clone https://github.com/simbi0nts/auto-repair-shop.git
+    cd auto-repair-shop
+    docker-compose up -d
+
+Note: other services might be blocking 80 port. Either change it in docker settings or stop these services.
+
+1.b) Old-shcool
+
+    git clone https://github.com/simbi0nts/auto-repair-shop.git
+    cd auto-repair-shop
+    pip install -r requirements.txt
+    pip cd auto_repair_shop
+    python manage.py runserver 0.0.0.0:80
+
+Note 1: Be sure to set DEBUG, SECRET_KEY and DJANGO_ALLOWED_HOSTS env variables
+Note 2: I'm highly recommend to use virtual environment
+
+2 ) Web now should be serving at http:\\localhost
 
 ## **2) Usage**
 
@@ -76,7 +96,7 @@ OR
 args to return
 
     is_error
-    info
+    info  # ex. 'Available time: : 2020/08/05 14:00; 2020/08/05 15:00; 2020/08/05 20:00'
 
 
 **2.5) Check workshop workload**
@@ -101,13 +121,18 @@ args to send:
 args to return
 
     is_error
-    info
+    info  # ex. 'Current workload: 62.5%'
 
 
 ## **3) Tests**
 
-*Nothing yet*
+a) Via Docker
 
+    docker-compose exec -T web pytest
+
+b) Old-shcool
+
+    pytest -v -c auto_repair_shop/pytest.ini
 
 
 ## **9) Additional Info**
@@ -130,4 +155,5 @@ User Timezone info could be provided with
     Intl.DateTimeFormat().resolvedOptions().timeZone
 
 (on client)
+
 
