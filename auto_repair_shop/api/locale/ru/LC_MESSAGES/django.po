@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-12 14:09+0300\n"
+"POT-Creation-Date: 2020-08-12 22:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,14 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-#: .\api\logic\workflow.py:76
+
+#: .\api\logic\workflow.py:73 .\api\logic\workflow.py:111
+msgid "Wrong arguments"
+msgstr "Неверные аргументы"
+
+#: .\api\logic\workflow.py:79
 msgid "No appointments available for chosen date"
 msgstr "Запись на выбранную дату недоступна"
 
-#: .\api\logic\workflow.py:80
+#: .\api\logic\workflow.py:83
 msgid "Current workload"
 msgstr "Текущая загруженность"
 
-#: .\api\logic\workflow.py:115
+#: .\api\logic\workflow.py:122
 msgid "Available time"
 msgstr "Доступное время"

@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from django.utils.translation import gettext_lazy as _
 
 from core.logic.appointments_info import get_available_appointments
+from core.logic.custom_exceptions import ProcessorNotFound
 from core.models.staff import Workman
 from core.models.workflow import Appointments, AppointmentsArchive
 from core.utils.dateutils import string_to_date
@@ -101,7 +102,10 @@ class AppointmentsModelCommunicator(object):
             "date": _time.date(),
             "workman_id": self.filter_args.workman_id,
         }
-        appointments = get_available_appointments(**args)
+        try:
+            appointments = get_available_appointments(**args)
+        except ProcessorNotFound:
+            return True, _("Wrong arguments")
 
         for appointment in appointments:
             if appointment.datetime_begin == _time:

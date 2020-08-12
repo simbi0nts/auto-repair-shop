@@ -7,7 +7,7 @@ from typing import List
 from django.db.models import Q, QuerySet
 from django.utils.timezone import make_aware, get_current_timezone
 
-from core.logic.custom_exceptions import WrongArgumentsHasBeenPassed
+from core.logic.custom_exceptions import ProcessorNotFound, WrongArgumentsHasBeenPassed
 from core.models.repair_shop import RepairShop
 from core.models.staff import Workman
 from core.models.work_regime import WorkRegime
@@ -344,6 +344,8 @@ class ProcessorArgs:
                 return DateRangeShopProcessor
 
             return DateRangeProcessor
+
+        raise ProcessorNotFound
 
     def get_processor(self):
         return self.processor(**asdict(self))

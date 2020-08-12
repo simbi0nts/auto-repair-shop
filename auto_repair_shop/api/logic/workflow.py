@@ -6,7 +6,7 @@ from core.logic.appointments_actions import make_an_appointment
 from core.logic.appointments_info import (get_all_appointments,
                                           get_occupied_appointments,
                                           get_available_appointments)
-from core.logic.custom_exceptions import MethodNotFound
+from core.logic.custom_exceptions import MethodNotFound, ProcessorNotFound
 from core.utils.message_formers import form_error
 from core.utils.parser import parse_get, parse_post, parse_datetime
 
@@ -66,8 +66,11 @@ class CheckRepairShopWorkloadLogic(BaseContextProcessor):
         def _perc(v1: float, v2: float):
             return round(v1 / v2 * 100, 2) if v2 else None
 
-        all_appointments = get_all_appointments(**data)
-        occupied_appointments = get_occupied_appointments(**data)
+        try:
+            all_appointments = get_all_appointments(**data)
+            occupied_appointments = get_occupied_appointments(**data)
+        except ProcessorNotFound:
+            return form_error(_("Wrong arguments"))
 
         all_appointments_cnt = len(all_appointments)
         occupied_appointments_cnt = len(occupied_appointments)
@@ -101,7 +104,11 @@ class GetAvailableAppointmentTimeLogic(BaseContextProcessor):
     @classmethod
     def get_available_time(cls, data: dict) -> dict:
         available_time = []
-        available_appointments = get_available_appointments(**data)
+
+        try:
+            available_appointments = get_available_appointments(**data)
+        except ProcessorNotFound:
+            return form_error(_("Wrong arguments"))
 
         date_format = '%Y/%m/%d %H:%M'
         timezone = cls.get_timezone(data)

@@ -7,3 +7,7 @@ class MethodNotFound(Exception):
 
 class WrongArgumentsHasBeenPassed(Exception):
     pass
+
+
+class ProcessorNotFound(Exception):
+    pass

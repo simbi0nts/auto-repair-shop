@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-12 14:09+0300\n"
+"POT-Creation-Date: 2020-08-12 22:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,26 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-#: .\core\logic\appointments_actions.py:86
-msgid "Appointment not found"
-msgstr ""
 
-#: .\core\logic\appointments_actions.py:86
-#: .\core\logic\appointments_actions.py:96
-#: .\core\logic\appointments_actions.py:108
+#: .\core\logic\appointments_actions.py:87
+msgid "Appointment not found"
+msgstr "Запись не найдена"
+
+#: .\core\logic\appointments_actions.py:87
+#: .\core\logic\appointments_actions.py:97
+#: .\core\logic\appointments_actions.py:112
 msgid "Success"
 msgstr "Успех"
 
-#: .\core\logic\appointments_actions.py:96
+#: .\core\logic\appointments_actions.py:97
 msgid "Chosen time is not available"
 msgstr "Выбранное время недоступно"
 
-#: .\core\logic\appointments_actions.py:110
+#: .\core\logic\appointments_actions.py:108
+msgid "Wrong arguments"
+msgstr "Неверные аргументы"
+
+#: .\core\logic\appointments_actions.py:114
 msgid "Chosen time is not valid"
 msgstr "Выбранное время некорректно"
 
