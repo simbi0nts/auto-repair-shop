@@ -10,7 +10,7 @@
 
 *Note: other services might be blocking 80 port. Either change it in docker settings or stop these services.*
 
-Fot example, to disable nginx:
+For example, to disable nginx:
 
     sudo nginx -s stop
 
