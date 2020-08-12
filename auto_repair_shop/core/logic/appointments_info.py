@@ -4,9 +4,8 @@ import inspect
 from dataclasses import asdict, dataclass
 from typing import List
 
-import pytz
 from django.db.models import Q, QuerySet
-from django.utils.timezone import make_aware
+from django.utils.timezone import make_aware, get_current_timezone
 
 from core.logic.custom_exceptions import WrongArgumentsHasBeenPassed
 from core.models.repair_shop import RepairShop
@@ -66,7 +65,7 @@ class BaseDataProcessor(object):
                              wt_end: dt.datetime = None, **kwargs) -> List[AppointmentInfo]:
 
         def _comb(v1: dt.date, v2: dt.time) -> dt.datetime:
-            return make_aware(dt.datetime.combine(v1, v2), pytz.UTC)
+            return make_aware(dt.datetime.combine(v1, v2), get_current_timezone())
 
         def is_lunchtime(lt_begin: dt.datetime, lt_end: dt.datetime, cur_time: dt.datetime) -> bool:
             if any(val is None for val in (lt_begin, lt_end, cur_time)):
@@ -149,6 +148,9 @@ class BaseDateProcessor(BaseDataProcessor):
         _date = kwargs.get("date", self.date)
 
         wrd = work_regime.get_wrd(_date)
+        if not wrd:
+            return res
+
         repair_shop = wrd.work_regime.repair_shop
 
         workman_ids = kwargs.get('workman_ids')
