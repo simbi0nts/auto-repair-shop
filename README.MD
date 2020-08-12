@@ -157,6 +157,8 @@ Language and timezone can be set in settings.py.
 
 Current project provided with sqlite db with some custom data. 
 
+Admin credentials: admin/admin
+
 Supported datetime formats:
 
     '%Y-%m-%d %H:%M:%S.%f'
