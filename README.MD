@@ -138,6 +138,13 @@ b) Old-shcool
     pytest -v -c auto_repair_shop/pytest.ini
 
 
+## **4) Possible improvements **
+
+1) User timezone to set up in profile
+2) User language to set up in profile
+3) Web representation of API functionality
+
+
 ## **9) Additional Info**
 
 Supported datetime formats:
