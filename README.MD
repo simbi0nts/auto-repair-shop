@@ -10,7 +10,7 @@
 
 *Note: other services might be blocking 80 port. Either change it in docker settings or stop these services.*
 
-1.b) Old-shcool
+1.b) Old-school
 
     git clone https://github.com/simbi0nts/auto-repair-shop.git
     cd auto-repair-shop
@@ -134,7 +134,7 @@ a) Via Docker
 
     docker-compose exec -T web pytest
 
-b) Old-shcool
+b) Old-school
 
     pytest -v -c auto_repair_shop/pytest.ini
 
