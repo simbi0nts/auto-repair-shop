@@ -1,4 +1,5 @@
 
+
 ## **1) Install**
 
 1.a) Via Docker
@@ -7,7 +8,7 @@
     cd auto-repair-shop
     docker-compose up -d
 
-Note: other services might be blocking 80 port. Either change it in docker settings or stop these services.
+*Note: other services might be blocking 80 port. Either change it in docker settings or stop these services.*
 
 1.b) Old-shcool
 
@@ -17,8 +18,8 @@ Note: other services might be blocking 80 port. Either change it in docker setti
     pip cd auto_repair_shop
     python manage.py runserver 0.0.0.0:80
 
-Note 1: Be sure to set DEBUG, SECRET_KEY and DJANGO_ALLOWED_HOSTS env variables
-Note 2: I'm highly recommend to use virtual environment
+*Note 1: Be sure to set DEBUG, SECRET_KEY and DJANGO_ALLOWED_HOSTS env variables
+Note 2: I'm highly recommend to use virtual environment*
 
 2 ) Web now should be serving at http:\\localhost
 
@@ -52,7 +53,7 @@ args to return
     access (token to access API)
 
 
-Note: Next api methods allowed only when access token (from 2.1 and 2.2) provided:
+*Note: Next api methods allowed only when access token (from 2.1 and 2.2) provided:*
 
     headers:
         Authorization: {access token}
@@ -93,7 +94,7 @@ OR
     workman_id (optional)
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
-Note: datetime_begin <= assumed appointment time < datetime_end
+*Note: datetime_begin <= assumed appointment time < datetime_end*
 
 args to return
 
@@ -119,7 +120,7 @@ args to send:
     workman_id (optional)
     timezone (type: str) (optional)  # ex. "Europe/Moscow" (default)
 
-Note: datetime_begin <= assumed appointment time < datetime_end
+*Note: datetime_begin <= assumed appointment time < datetime_end*
 
 args to return
 
@@ -138,7 +139,7 @@ b) Old-shcool
     pytest -v -c auto_repair_shop/pytest.ini
 
 
-## **4) Possible improvements **
+## **4) Possible improvements**
 
 1) User timezone to set up in profile
 2) User language to set up in profile
