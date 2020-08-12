@@ -1,0 +1,341 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-12 14:09+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\core\logic\appointments_actions.py:86
+msgid "Appointment not found"
+msgstr ""
+
+#: .\core\logic\appointments_actions.py:86
+#: .\core\logic\appointments_actions.py:96
+#: .\core\logic\appointments_actions.py:108
+msgid "Success"
+msgstr "Успех"
+
+#: .\core\logic\appointments_actions.py:96
+msgid "Chosen time is not available"
+msgstr "Выбранное время недоступно"
+
+#: .\core\logic\appointments_actions.py:110
+msgid "Chosen time is not valid"
+msgstr "Выбранное время некорректно"
+
+#: .\core\models\managers.py:33
+msgid "Deleted"
+msgstr "Удалено"
+
+#: .\core\models\repair_shop.py:13
+msgid "Repair shop name"
+msgstr "Название автомастерской"
+
+#: .\core\models\repair_shop.py:14
+msgid "Default work regime (optional)"
+msgstr "Стандартный режим работ (необязательно)"
+
+#: .\core\models\repair_shop.py:18 .\core\models\staff.py:17
+#: .\core\models\work_regime.py:38
+msgid "Repair shop"
+msgstr "Автомастерская"
+
+#: .\core\models\repair_shop.py:19
+msgid "Repair shops"
+msgstr "Автомастерские"
+
+#: .\core\models\staff.py:13
+msgid "First name"
+msgstr "Имя"
+
+#: .\core\models\staff.py:14
+msgid "Middle name"
+msgstr "Отчество"
+
+#: .\core\models\staff.py:15
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: .\core\models\staff.py:18
+msgid "Individual work regime (optional)"
+msgstr "Индивидуальный режим работ (необязательно)"
+
+#: .\core\models\staff.py:23
+msgid "Workman"
+msgstr "Рабочий"
+
+#: .\core\models\staff.py:24
+msgid "Workmans"
+msgstr "Рабочие"
+
+#: .\core\models\user.py:28
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: .\core\models\user.py:30
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: .\core\models\user.py:41
+msgid "Car owner"
+msgstr "Владелец машины"
+
+#: .\core\models\user.py:42
+msgid "Car model"
+msgstr "Модель машины"
+
+#: .\core\models\user.py:43
+msgid "Plate number"
+msgstr "Рег. номер"
+
+#: .\core\models\user.py:46
+msgid "Car"
+msgstr "Машина"
+
+#: .\core\models\user.py:47
+msgid "Cars"
+msgstr "Машины"
+
+#: .\core\models\work_regime.py:26
+msgid "Monday"
+msgstr "Понедельник"
+
+#: .\core\models\work_regime.py:27
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: .\core\models\work_regime.py:28
+msgid "Wednesday"
+msgstr "Среда"
+
+#: .\core\models\work_regime.py:29
+msgid "Thursday"
+msgstr "Четверг"
+
+#: .\core\models\work_regime.py:30
+msgid "Friday"
+msgstr "Пятница"
+
+#: .\core\models\work_regime.py:31
+msgid "Saturday"
+msgstr "Суббота"
+
+#: .\core\models\work_regime.py:32
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: .\core\models\work_regime.py:37
+msgid "Regime name"
+msgstr "Название режима работ"
+
+#: .\core\models\work_regime.py:41 .\core\models\workflow.py:19
+msgid "Work regime"
+msgstr "Режим работ"
+
+#: .\core\models\work_regime.py:42
+msgid "Work regimes"
+msgstr "Режимы работ"
+
+#: .\core\models\work_regime.py:80
+msgid "Regime"
+msgstr "Режим работ"
+
+#: .\core\models\work_regime.py:81
+msgid "Work start time"
+msgstr "Время начала работы"
+
+#: .\core\models\work_regime.py:82
+msgid "Work end time"
+msgstr "Время конца работы"
+
+#: .\core\models\work_regime.py:83
+msgid "Shift finish on next day"
+msgstr "Завершение смены на следующий деь"
+
+#: .\core\models\work_regime.py:85
+msgid "Lunch start time"
+msgstr "Время начала обеда"
+
+#: .\core\models\work_regime.py:86
+msgid "Lunch end time"
+msgstr "Время конца обеда"
+
+#: .\core\models\work_regime.py:88 .\core\models\workflow.py:16
+msgid "Appointment duration (seconds)"
+msgstr "Длительность записи (секунды)"
+
+#: .\core\models\work_regime.py:101
+msgid "Date"
+msgstr "Дата"
+
+#: .\core\models\work_regime.py:102
+msgid "Is holiday"
+msgstr "Выходной"
+
+#: .\core\models\work_regime.py:105
+msgid "Holiday"
+msgstr "Выходной"
+
+#: .\core\models\work_regime.py:109
+msgid "Exception of work regime"
+msgstr "Исключение для режима работ"
+
+#: .\core\models\work_regime.py:110
+msgid "Exceptions of work regime"
+msgstr "Исключения для режима работ"
+
+#: .\core\models\work_regime.py:115
+msgid "Day of the week"
+msgstr "День недели"
+
+#: .\core\models\work_regime.py:121 .\core\models\work_regime.py:122
+msgid "Details of work regime"
+msgstr "Детали режима работ"
+
+#: .\core\models\workflow.py:14
+msgid "Appointment date"
+msgstr "Дата записи"
+
+#: .\core\models\workflow.py:15
+msgid "Appointment time"
+msgstr "Время записи"
+
+#: .\core\models\workflow.py:17
+msgid "Repair mechanic"
+msgstr "Механик"
+
+#: .\core\models\workflow.py:18
+msgid "Customer"
+msgstr "Покупатель"
+
+#: .\core\models\workflow.py:35
+msgid "Appointment (archive)"
+msgstr "Запись (Архив)"
+
+#: .\core\models\workflow.py:36
+msgid "Appointments (archive)"
+msgstr "Записи (Архив)"
+
+#: .\core\models\workflow.py:42
+msgid "Appointment"
+msgstr "Запись"
+
+#: .\core\models\workflow.py:43
+msgid "Appointments"
+msgstr "Записи"
+
+#: .\core\templates\core\base.html:15 .\core\templates\core\base.html:17
+#: .\core\templates\core\base.html:24
+msgid "Repair Shop App"
+msgstr ""
+
+#: .\core\templates\core\base.html:30
+msgid "Home"
+msgstr "Домой"
+
+#: .\core\templates\core\base.html:35
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\core\templates\core\base.html:36
+msgid "Logout"
+msgstr "Выйти из системы"
+
+#: .\core\templates\core\base.html:38 .\core\templates\user\login.html:15
+msgid "Login"
+msgstr "Войти в систему"
+
+#: .\core\templates\core\base.html:39
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\core\templates\core\home.html:8
+msgid "You have an appointment"
+msgstr "У вас есть запись"
+
+#: .\core\templates\core\home.html:15
+msgid "You have no appointments"
+msgstr "У вас нет записи"
+
+#: .\core\templates\user\login.html:11
+msgid "Log In"
+msgstr "Войти в систему"
+
+#: .\core\templates\user\login.html:20
+msgid "Need An Account?"
+msgstr "Нужен аккаунт?"
+
+#: .\core\templates\user\login.html:20
+msgid "Sign Up Now"
+msgstr "Зарегистрироваться сейчас"
+
+#: .\core\templates\user\logout.html:5
+msgid "You have been logged out"
+msgstr "Вы вышли из системы"
+
+#: .\core\templates\user\logout.html:8
+msgid "Log In Again"
+msgstr "Войти снова"
+
+#: .\core\templates\user\profile.html:17
+msgid "Profile Info"
+msgstr "Информация профиля"
+
+#: .\core\templates\user\profile.html:22
+msgid "Update"
+msgstr "Обновить"
+
+#: .\core\templates\user\register.html:10
+msgid "Join Today"
+msgstr "Зарегестрироваться сейчас"
+
+#: .\core\templates\user\register.html:14
+msgid "Sign Up"
+msgstr "Зарегестрироваться"
+
+#: .\core\templates\user\register.html:19
+msgid "Already Have An Account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\core\templates\user\register.html:19
+msgid "Sign In"
+msgstr "Войти в систему"
+
+#: .\core\utils\dateutils.py:41
+#, python-brace-format
+msgid "time data '{ds}' did not match any format {f}"
+msgstr "время '{ds}' не подходит ни под один из форматов {f}"
+
+#: .\core\views\homepage.py:28
+msgid ""
+"Date: {} \n"
+"Time: {} \n"
+"Duration: {} \n"
+"Mechanic: {}"
+msgstr ""
+"Дата: {} \n"
+"Время: {} \n"
+"Длительность: {} \n"
+"Механик: {}"
+
+#: .\core\views\profile.py:16
+msgid "Your account has been created! You are now able to log in"
+msgstr "Ваша учетная запись была создана! Теперь вы можете войти в систему"
+
+#: .\core\views\profile.py:34
+msgid "Your account has been updated!"
+msgstr "Ваш аккаунт был обновлен!"
