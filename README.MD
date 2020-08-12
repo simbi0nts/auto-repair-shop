@@ -167,4 +167,6 @@ User Timezone info could be provided with
 
 (on client)
 
+Language and timezone can be set in settings.py.
 
+Current project provided with sqlite db with some custom data. 
