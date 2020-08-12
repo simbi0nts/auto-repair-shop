@@ -148,6 +148,10 @@ b) Old-school
 
 ## **9) Additional Info**
 
+Language and timezone can be set in settings.py.
+
+Current project provided with sqlite db with some custom data. 
+
 Supported datetime formats:
 
     '%Y-%m-%d %H:%M:%S.%f'
@@ -166,7 +170,3 @@ User Timezone info could be provided with
     Intl.DateTimeFormat().resolvedOptions().timeZone
 
 (on client)
-
-Language and timezone can be set in settings.py.
-
-Current project provided with sqlite db with some custom data. 
