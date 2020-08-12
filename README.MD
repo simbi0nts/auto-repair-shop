@@ -10,6 +10,10 @@
 
 *Note: other services might be blocking 80 port. Either change it in docker settings or stop these services.*
 
+Fot example, to disable nginx:
+
+    sudo nginx -s stop
+
 1.b) Old-school
 
     git clone https://github.com/simbi0nts/auto-repair-shop.git
@@ -18,8 +22,9 @@
     pip cd auto_repair_shop
     python manage.py runserver 0.0.0.0:80
 
-*Note 1: Be sure to set DEBUG, SECRET_KEY and DJANGO_ALLOWED_HOSTS env variables
-Note 2: I'm highly recommend to use virtual environment*
+*Note 1: Be sure to set DEBUG, SECRET_KEY and DJANGO_ALLOWED_HOSTS env variables*
+
+*Note 2: I'm highly recommend to use virtual environment*
 
 2 ) Web now should be serving at http:\\localhost
 
